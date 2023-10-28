@@ -1,4 +1,10 @@
-import { Featured, HeroSection, OffersSection } from '@/components';
+import {
+  Featured,
+  FinancialFuture,
+  FinancilaFreedom,
+  HeroSection,
+  OffersSection,
+} from '@/components';
 
 export default function Home() {
   return (
@@ -6,6 +12,8 @@ export default function Home() {
       <HeroSection />
       <Featured />
       <OffersSection />
+      <FinancilaFreedom />
+      <FinancialFuture />
     </main>
   );
 }

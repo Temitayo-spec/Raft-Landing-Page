@@ -2,7 +2,7 @@
 import { styled } from 'styled-components';
 import grid_background from '../../../../public/images/offer_card_grid_1.png';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.section``;
 
 export const Inner = styled.div`
   max-width: 1440px;
@@ -10,7 +10,7 @@ export const Inner = styled.div`
   margin: 12.38rem auto 0;
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
