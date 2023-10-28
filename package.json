@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@motionone/utils": "^10.16.3",
     "@studio-freight/react-lenis": "^0.0.36",
     "framer-motion": "^10.16.4",
     "next": "13.5.4",
