@@ -6,3 +6,4 @@ export { default as OffersSection } from './UI/OffersSection';
 export { default as FinancilaFreedom } from './UI/FinancialFreedom';
 export { default as FinancialFuture } from './UI/FinancialFuture';
 export { default as IntroSection } from './UI/IntroSection';
+export { default as JoinSection } from './UI/JoinSection';
