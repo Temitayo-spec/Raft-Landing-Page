@@ -1,9 +1,9 @@
 'use client';
 
 import { ReactLenis } from '@studio-freight/react-lenis';
-import StyledComponentsRegistry from '../../../../libs/registry';
+import StyledComponentsRegistry from '../../../libs/registry';
 import { GlobalStyles } from './GlobalStyles';
-import { Header } from '../..';
+import { Header } from '..';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

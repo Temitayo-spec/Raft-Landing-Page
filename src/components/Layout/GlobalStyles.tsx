@@ -9,6 +9,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     --light-gray: #dcdcdc;
     --link-color: #bdbdbd;
     --green: #2b892e;
+    --emerald: #48d64c;
   }
 
   * {

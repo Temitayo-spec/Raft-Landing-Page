@@ -3,6 +3,7 @@ import {
   FinancialFuture,
   FinancilaFreedom,
   HeroSection,
+  IntroSection,
   OffersSection,
 } from '@/components';
 
@@ -14,6 +15,7 @@ export default function Home() {
       <OffersSection />
       <FinancilaFreedom />
       <FinancialFuture />
+      <IntroSection />
     </main>
   );
 }
