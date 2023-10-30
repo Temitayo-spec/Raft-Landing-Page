@@ -1,4 +1,5 @@
 import {
+  FAQ,
   Featured,
   FinancialFuture,
   FinancilaFreedom,
@@ -18,6 +19,7 @@ export default function Home() {
       <FinancialFuture />
       <IntroSection />
       <JoinSection />
+      <FAQ />
     </main>
   );
 }
