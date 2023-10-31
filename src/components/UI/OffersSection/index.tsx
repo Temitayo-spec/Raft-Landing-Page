@@ -13,6 +13,7 @@ import {
   ImageCtn,
   TextCtn,
 } from './styles';
+import MaskText from '@/components/Common/MaskText';
 
 const offers = [
   {
@@ -42,16 +43,17 @@ const offers = [
 ];
 
 const OffersSection = () => {
+  const desktopHeaderPhrases = ['Elevate Your Financial', 'Journey with RAFT'];
+  const desktopParagraphPhrase = [
+    'RAFT offers a world of financial possibilities. From investments to payments,',
+    "we've got you covered. Join us and unlock your potential today.",
+  ];
   return (
     <Wrapper>
       <Inner>
         <Header>
-          <h1>Elevate Your Financial Journey with RAFT</h1>
-          <p>
-            RAFT offers a world of financial possibilities. From investments to
-            payments, we&apos;ve got you covered. Join us and unlock your
-            financial potential today.
-          </p>
+          <MaskText phrases={desktopHeaderPhrases} tag="h1" />
+          <MaskText phrases={desktopParagraphPhrase} tag="p" />
         </Header>
         <Offers>
           {offers.slice(0, 2).map((offer, i) => (
@@ -60,7 +62,7 @@ const OffersSection = () => {
                 <Image src={offer.illustration} alt="illustration" />
               </ImageCtn>
               <TextCtn>
-                <h2>{offer.title}</h2>
+                <MaskText phrases={new Array(offer.title)} tag="h2" />
                 <p>{offer.details}</p>
               </TextCtn>
             </OfferCard>
@@ -73,7 +75,7 @@ const OffersSection = () => {
                 <Image src={offer.illustration} alt="illustration" />
               </ImageCtn>
               <TextCtn>
-                <h2>{offer.title}</h2>
+                <MaskText phrases={new Array(offer.title)} tag="h2" />
                 <p>{offer.details}</p>
               </TextCtn>
             </OfferCard>

@@ -43,6 +43,8 @@ export const BannerCtn = styled.div`
   position: relative;
   width: 100%;
   height: 38.4375rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
 
   img {
     border-radius: 0.75rem;
@@ -71,11 +73,14 @@ export const Edge = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 1.5rem;
-  font-weight: 500;
   display: flex;
   gap: 0.5rem;
   align-items: center;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 `;
 
 export const BriefNote = styled.div`

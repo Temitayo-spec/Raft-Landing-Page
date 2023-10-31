@@ -14,7 +14,7 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
     }),
   };
   const body = useRef(null);
-  const isInView = useInView(body, { once: true, margin: '-10%' });
+  const isInView = useInView(body, { once: true, margin: '-10%', amount: 0.4 });
   return (
     <Body ref={body}>
       {phrases.map((phrase, index) => {
@@ -29,6 +29,24 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
               >
                 {phrase}
               </motion.h1>
+            ) : tag === 'h2' ? (
+              <motion.h2
+                variants={animate}
+                initial="initial"
+                animate={isInView ? 'open' : ''}
+                custom={index}
+              >
+                {phrase}
+              </motion.h2>
+            ) : tag === 'h3' ? (
+              <motion.h3
+                variants={animate}
+                initial="initial"
+                animate={isInView ? 'open' : ''}
+                custom={index}
+              >
+                {phrase}
+              </motion.h3>
             ) : (
               <motion.p
                 variants={animate}

@@ -88,6 +88,18 @@ export const Stat = styled.div`
   align-items: center;
   text-align: center;
   gap: 1rem;
+
+  h1 {
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--link-color);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 `;
 
 export const Number = styled.h1`

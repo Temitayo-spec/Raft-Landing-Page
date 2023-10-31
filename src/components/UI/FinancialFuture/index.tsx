@@ -16,6 +16,7 @@ import {
   SubTitle,
   Banner,
 } from './styles';
+import MaskText from '@/components/Common/MaskText';
 
 const cardsInfo = [
   {
@@ -52,23 +53,24 @@ const stats = [
 ];
 
 const FinancialFuture = () => {
+  const desktopHeaderPhrase = ['Confidently Shape Your', 'Financial Future'];
+  const desktopParagraphPhrase = [
+    'At RAFT, we empower you to confidently shape your financial future. Our modern',
+    'approach simplifies saving and investing, making it easier than ever.',
+  ];
   return (
     <Wrapper>
       <Inner>
         <Header>
-          <h1>Confidently Shape Your Financial Future</h1>
-          <p>
-            At RAFT, we empower you to confidently shape your financial
-            future.Our modern approach simplifies saving and investing, making
-            it easier than ever.
-          </p>
+          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+          <MaskText phrases={desktopParagraphPhrase} tag="p" />
         </Header>
         <CardContainer>
           {cardsInfo.map((info, i) => (
             <Card key={i}>
               <TextCtn>
-                <h3>{info.title}</h3>
-                <p>{info.details}</p>
+                <MaskText phrases={new Array(info.title)} tag="h3" />
+                <MaskText phrases={new Array(info.details)} tag="p" />
               </TextCtn>
               <SVGCtn>
                 <Image src={info.icon} alt="icon" />
@@ -79,8 +81,8 @@ const FinancialFuture = () => {
         <Stats>
           {stats.map((stat, i) => (
             <Stat key={i}>
-              <Number>{stat.number}</Number>
-              <SubTitle>{stat.subtitle}</SubTitle>
+              <MaskText phrases={new Array(stat.number)} tag="h1" />
+              <MaskText phrases={new Array(stat.subtitle)} tag="p" />
             </Stat>
           ))}
         </Stats>

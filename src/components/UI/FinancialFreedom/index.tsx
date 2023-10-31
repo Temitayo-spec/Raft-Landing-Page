@@ -13,6 +13,10 @@ import {
   Title,
   BriefNote,
 } from './styles';
+import MaskText from '@/components/Common/MaskText';
+import RevealCover from '@/components/Common/RevealCover';
+import { Div } from '../Featured/styles';
+import { imageVariants } from '../Featured';
 
 const edges = [
   {
@@ -36,36 +40,49 @@ const edges = [
 ];
 
 const FinancialFreedom = () => {
+  const desktopHeaderPhrase = ['Your Financial Freedom,', 'Your Way'];
+  const desktopParagraphPhrase = [
+    'We believe that managing your finances should be effortless and cost-effective.',
+    "That's why we offer you the freedom you deserve.",
+  ];
+  const desktopBriefNotePhrase = [
+    'Smart investments,',
+    'secure payments, and',
+    'expert guidance, all in',
+    'one place.',
+  ];
   return (
     <Wrapper>
       <Inner>
         <Header>
-          <h1>Your Financial Freedom, Your Way</h1>
-          <p>
-            We believe that managing your finances should be effortless and
-            cost-effective. That&apos;s why we offer you the freedom you deserve
-          </p>
+          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+          <MaskText phrases={desktopParagraphPhrase} tag="p" />
         </Header>
         <BannerCtn>
-          <Image src={financial_freedom_banner} alt="banner_img" fill />
+          <RevealCover />
+          <Div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.25, once: true }}
+          >
+            <Image src={financial_freedom_banner} alt="banner_img" fill />
+          </Div>
         </BannerCtn>
         <Edges>
           {edges.map((edge, i) => (
             <Edge key={i}>
               <Title>
                 <Image src={edge.icon} alt="icon" />
-                {edge.point}
+                <MaskText phrases={new Array(edge.point)} tag="h3" />
               </Title>
-              <p>{edge.details}</p>
+              <MaskText phrases={new Array(edge.details)} tag="p" />
             </Edge>
           ))}
         </Edges>
       </Inner>
       <BriefNote>
-        <p>
-          Smart investments, secure payments, and expert guidance, all in one
-          place.
-        </p>
+        <MaskText phrases={desktopBriefNotePhrase} tag="p" />
       </BriefNote>
     </Wrapper>
   );
