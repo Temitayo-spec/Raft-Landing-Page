@@ -2,8 +2,10 @@ import Image from 'next/image';
 import { Wrapper, Inner, Pill, HeroTextContainer } from './styles';
 import ic_chevron_right from '../../../../public/svgs/ic_chevron_right.svg';
 import { GetStartedButton } from '@/components';
+import MaskText from '@/components/Common/MaskText';
 
 const HeroSection = () => {
+  const phrases = ['Building the future of', 'banking.'];
   return (
     <Wrapper>
       <Inner>
@@ -12,7 +14,7 @@ const HeroSection = () => {
           <Image src={ic_chevron_right} alt="chevron-right" />
         </Pill>
         <HeroTextContainer>
-          <h1>Building the future of banking.</h1>
+          <MaskText phrases={phrases} tag="h1" />
           <p>
             Experience the future of banking with RAFT. We&apos;re here to
             empower your financial journey.

@@ -27,6 +27,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     background-color: var(--Background);
     color: var(--white);
     scroll-snap-type: y mandatory;
+
     &::-webkit-scrollbar {
       width: 0.5rem;
       border-radius: 0.5rem;
@@ -64,5 +65,12 @@ export const GlobalStyles = styled.createGlobalStyle`
   .scroller span {
     display: block;
     margin-right: 5rem;
+  }
+
+  .not_complete {
+    display: none;
+  }
+
+  .complete {
   }
 `;

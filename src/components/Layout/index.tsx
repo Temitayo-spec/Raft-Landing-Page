@@ -3,20 +3,25 @@
 import { ReactLenis } from '@studio-freight/react-lenis';
 import StyledComponentsRegistry from '../../../libs/registry';
 import { GlobalStyles } from './GlobalStyles';
-import { Header } from '..';
+import { Header, Preloader } from '..';
+import { useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [complete, setComplete] = useState(false);
   return (
-    <ReactLenis
-      root
-      easing={(t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))}
-    >
-      <StyledComponentsRegistry>
+    <StyledComponentsRegistry>
+      <ReactLenis
+        root
+        easing={(t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))}
+      >
         <GlobalStyles />
-        <Header />
-        {children}
-      </StyledComponentsRegistry>
-    </ReactLenis>
+        <Preloader setComplete={setComplete} />
+        <div className={complete ? 'complete' : 'not_complete'}>
+          <Header />
+          {children}
+        </div>
+      </ReactLenis>
+    </StyledComponentsRegistry>
   );
 };
 

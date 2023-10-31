@@ -38,10 +38,12 @@ export const Pill = styled.div`
 `;
 
 export const HeroTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   h1 {
     font-size: 6rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
   }
 
   p {
