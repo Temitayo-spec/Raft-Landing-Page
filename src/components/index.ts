@@ -8,3 +8,4 @@ export { default as FinancialFuture } from './UI/FinancialFuture';
 export { default as IntroSection } from './UI/IntroSection';
 export { default as JoinSection } from './UI/JoinSection';
 export { default as FAQ } from './UI/FAQ';
+export { default as Footer } from './UI/Footer';

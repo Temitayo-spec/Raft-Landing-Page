@@ -3,6 +3,7 @@ import {
   Featured,
   FinancialFuture,
   FinancilaFreedom,
+  Footer,
   HeroSection,
   IntroSection,
   JoinSection,
@@ -20,6 +21,7 @@ export default function Home() {
       <IntroSection />
       <JoinSection />
       <FAQ />
+      <Footer />
     </main>
   );
 }
