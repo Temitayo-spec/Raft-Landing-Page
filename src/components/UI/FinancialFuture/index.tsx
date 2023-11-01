@@ -1,7 +1,9 @@
+'use client';
 import Image from 'next/image';
 import ic_money_send from '../../../../public/svgs/ic_money_send.svg';
 import ic_wallet_minus from '../../../../public/svgs/ic_wallet_minus.svg';
 import future_banner from '../../../../public/images/future_banner.png';
+import future_mobile_banner from '../../../../public/images/future_mobile_banner.png';
 import {
   Wrapper,
   Inner,
@@ -17,6 +19,7 @@ import {
   Banner,
 } from './styles';
 import MaskText from '@/components/Common/MaskText';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 
 const cardsInfo = [
   {
@@ -53,17 +56,36 @@ const stats = [
 ];
 
 const FinancialFuture = () => {
+  const isMobile = useIsMobile();
   const desktopHeaderPhrase = ['Confidently Shape Your', 'Financial Future'];
   const desktopParagraphPhrase = [
     'At RAFT, we empower you to confidently shape your financial future. Our modern',
     'approach simplifies saving and investing, making it easier than ever.',
   ];
+
+  // For mobile
+  const mobileHeaderPhrase = ['Confidently Shape', ' Your Financial Future'];
+  const mobileParagraphPhrase = [
+    'At RAFT, we empower you to confidently shape',
+    'your financial future. Our modern approach',
+    'simplifies saving and investing, making it easier',
+    'than ever.',
+  ];
   return (
     <Wrapper>
       <Inner>
         <Header>
-          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
-          <MaskText phrases={desktopParagraphPhrase} tag="p" />
+          {isMobile ? (
+            <>
+              <MaskText phrases={mobileHeaderPhrase} tag="h1" />
+              <MaskText phrases={mobileParagraphPhrase} tag="p" />
+            </>
+          ) : (
+            <>
+              <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+              <MaskText phrases={desktopParagraphPhrase} tag="p" />
+            </>
+          )}
         </Header>
         <CardContainer>
           {cardsInfo.map((info, i) => (
@@ -88,7 +110,11 @@ const FinancialFuture = () => {
         </Stats>
       </Inner>
       <Banner>
-        <Image src={future_banner} alt="future_banner" fill />
+        {isMobile ? (
+          <Image src={future_mobile_banner} alt="future_banner" fill />
+        ) : (
+          <Image src={future_banner} alt="future_banner" fill />
+        )}
       </Banner>
     </Wrapper>
   );

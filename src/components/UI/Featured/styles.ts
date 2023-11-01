@@ -19,6 +19,16 @@ export const Inner = styled.div`
     text-transform: uppercase;
     margin-top: 6.5rem;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 5rem;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 3.75rem;
+    }
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -26,13 +36,20 @@ export const ImageContainer = styled.div`
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 35rem;
   overflow: hidden;
   border-radius: 0.75rem;
 
   img {
     object-fit: cover;
     border-radius: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 0.5rem;
+
+    img {
+      height: 23.75rem;
+    }
   }
 `;
 
@@ -48,6 +65,10 @@ export const Div = styled(motion.div)`
   overflow: hidden;
 
   @media (max-width: 599px) {
-    height: 15rem;
+    height: 23.75rem;
+    
+     img {
+      object-fit: cover;
+     }
   }
 `;

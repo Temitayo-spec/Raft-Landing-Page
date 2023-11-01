@@ -31,12 +31,27 @@ export const Header = styled.header`
     font-weight: 400;
     line-height: 1.75rem;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
 `;
 
 export const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Card = styled.div`
@@ -44,6 +59,10 @@ export const Card = styled.div`
   border-radius: 0.75rem;
   border: 1px solid var(--stroke, rgba(255, 255, 255, 0.04));
   background: #131313;
+
+  @media (max-width: 768px) {
+    height: 27.5rem;
+  }
 `;
 
 export const TextCtn = styled.div`
@@ -65,6 +84,20 @@ export const TextCtn = styled.div`
     font-weight: 400;
     line-height: 1.75rem;
   }
+
+  @media (max-width: 768px) {
+    margin: 1.5rem 1.5rem 1.75rem 1.5rem;
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
 `;
 
 export const SVGCtn = styled.div`
@@ -72,6 +105,17 @@ export const SVGCtn = styled.div`
   height: 24.55rem;
   display: grid;
   place-items: center;
+
+  @media (max-width: 768px) {
+    height: 15.28219rem;
+    background-position: center center;
+    background-size: contain;
+
+    img {
+      width: 7.5rem;
+      height: 7.5rem;
+    }
+  }
 `;
 
 export const Stats = styled.div`
@@ -80,6 +124,10 @@ export const Stats = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    margin: 3.75rem auto;
+  }
 `;
 
 export const Stat = styled.div`
@@ -99,6 +147,16 @@ export const Stat = styled.div`
     font-size: 1.125rem;
     font-weight: 500;
     text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.75rem;
+    }
   }
 `;
 
@@ -121,5 +179,12 @@ export const Banner = styled.div`
 
   img {
     object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    height: 31.25rem;
+    img {
+      object-fit: contain;
+    }
   }
 `;

@@ -3,6 +3,10 @@ import { styled } from 'styled-components';
 
 export const Wrapper = styled.section`
   margin-top: 11.25rem;
+
+  @media (max-width: 768px) {
+    margint-top: 6.25rem;
+  }
 `;
 
 export const Inner = styled.div`
@@ -12,6 +16,10 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: 6rem;
+  }
 `;
 
 export const Header = styled.header`
@@ -35,6 +43,19 @@ export const Header = styled.header`
     font-weight: 400;
     line-height: 1.75rem;
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 5rem;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
 `;
 
 export const BannerCtn = styled.div`
@@ -50,12 +71,21 @@ export const BannerCtn = styled.div`
     border-radius: 0.75rem;
     object-fit: cover;
   }
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 export const Edges = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 `;
 
 export const Edge = styled.div`
@@ -84,7 +114,7 @@ export const Title = styled.div`
 `;
 
 export const BriefNote = styled.div`
-  height: 54.75rem;
+  max-height: 54.75rem;
   padding: 8.25rem 4.5rem;
   background: var(--emerald);
 
@@ -93,5 +123,12 @@ export const BriefNote = styled.div`
     font-size: 8rem;
     font-weight: 400;
     max-width: 1440px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    p {
+      font-size: 3.75rem;
+    }
   }
 `;

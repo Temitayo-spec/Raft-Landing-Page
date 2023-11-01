@@ -1,9 +1,12 @@
+'use client';
 import Image from 'next/image';
 import big_banner from '../../../../public/images/big_banner.png';
+import featured_mobile_banner from '../../../../public/images/featured_mobile_banner.png';
 import ParallaxText from '@/components/Common/ParallaxImages';
 import companies_image from '../../../../public/images/companies.png';
 import { Wrapper, Inner, ImageContainer, ParallaxImages, Div } from './styles';
 import RevealCover from '@/components/Common/RevealCover';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 export const imageVariants = {
   hidden: {
     scale: 1.6,
@@ -19,6 +22,7 @@ export const imageVariants = {
 };
 
 const Featured = () => {
+  const isMobile = useIsMobile();
   return (
     <Wrapper>
       <Inner>
@@ -30,7 +34,15 @@ const Featured = () => {
             whileInView="visible"
             viewport={{ amount: 0.25, once: true }}
           >
-            <Image src={big_banner} alt="big_banner" fill />
+            {isMobile ? (
+              <Image
+                src={featured_mobile_banner}
+                alt="featured_mobile_banner"
+                fill
+              />
+            ) : (
+              <Image src={big_banner} alt="big_banner" fill />
+            )}
           </Div>
         </ImageContainer>
         <h2>Featured and Seen in</h2>

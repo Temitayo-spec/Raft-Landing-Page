@@ -41,9 +41,8 @@ export const HeroTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
   padding-bottom: 2rem;
-  
+
   h1 {
     font-size: 6rem;
     font-weight: 400;
@@ -55,5 +54,19 @@ export const HeroTextContainer = styled.div`
     font-size: 1.5rem;
     font-weight: 400;
     margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
 `;

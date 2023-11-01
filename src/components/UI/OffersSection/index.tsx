@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import seamless_payments from '../../../../public/images/seamless_payments.png';
 import smart_investing from '../../../../public/images/smart_investing.png';
@@ -14,6 +15,7 @@ import {
   TextCtn,
 } from './styles';
 import MaskText from '@/components/Common/MaskText';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 
 const offers = [
   {
@@ -48,12 +50,24 @@ const OffersSection = () => {
     'RAFT offers a world of financial possibilities. From investments to payments,',
     "we've got you covered. Join us and unlock your potential today.",
   ];
+
+  const mobileParagraphPhrase = [
+    'RAFT offers a world of financial possibilities. From',
+    "investments to payments, we've got you covered.",
+    'Join us and unlock your potential today.',
+  ];
+  const isMobile = useIsMobile();
   return (
     <Wrapper>
       <Inner>
         <Header>
           <MaskText phrases={desktopHeaderPhrases} tag="h1" />
-          <MaskText phrases={desktopParagraphPhrase} tag="p" />
+
+          {isMobile ? (
+            <MaskText phrases={mobileParagraphPhrase} tag="p" />
+          ) : (
+            <MaskText phrases={desktopParagraphPhrase} tag="p" />
+          )}
         </Header>
         <Offers>
           {offers.slice(0, 2).map((offer, i) => (
