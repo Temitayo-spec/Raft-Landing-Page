@@ -13,9 +13,15 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6.25rem;
+
+  h1 {
+    max-width: 56rem;
+    font-size: 6rem;
+    font-weight: 400;
+  }
 `;
 
-export const HeaderText = styled.h2`
+export const HeaderText = styled.h1`
   max-width: 56rem;
   font-size: 6rem;
   font-weight: 400;
@@ -27,14 +33,15 @@ export const Accordion = styled.div`
   gap: 1.5rem;
 `;
 
-export const AccordionItem = styled.div`
+export const AccordionItem = styled(motion.div)`
   display: flex;
   flex-direction: column;
   padding-bottom: 1rem;
   border-bottom: 0.0625rem solid #3d3d3d;
+  overflow: hidden;
 `;
 
-export const Question = styled.div`
+export const Question = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;

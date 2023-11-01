@@ -6,6 +6,10 @@ import MaskText from '@/components/Common/MaskText';
 
 const HeroSection = () => {
   const phrases = ['Building the future of', 'banking.'];
+  const paragraphPhrases = [
+    "Experience the future of banking with RAFT. We're here to",
+    'empower your financial journey.',
+  ];
   return (
     <Wrapper>
       <Inner>
@@ -15,10 +19,7 @@ const HeroSection = () => {
         </Pill>
         <HeroTextContainer>
           <MaskText phrases={phrases} tag="h1" />
-          <p>
-            Experience the future of banking with RAFT. We&apos;re here to
-            empower your financial journey.
-          </p>
+          <MaskText phrases={paragraphPhrases} tag="p" />
         </HeroTextContainer>
         <GetStartedButton padding="1rem 2rem" />
       </Inner>

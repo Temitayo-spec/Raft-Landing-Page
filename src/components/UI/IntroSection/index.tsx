@@ -17,6 +17,7 @@ import {
   MiddleImage,
   RightImage,
 } from './styles';
+import { MaskText } from '@/components';
 
 const edges = [
   {
@@ -41,17 +42,19 @@ const edges = [
 
 const IntroSection = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const desktopHeaderPhrase = ["Introducing RAFT's Next-", 'Gen Cards'];
+  const desktopParagraphPhrase = [
+    " Discover RAFT's latest innovation – our new cards. Elevate your banking",
+    'experience with cutting-edge features, security, and unprecedented',
+    'convenience.',
+  ];
   return (
     <Wrapper>
       <Inner>
         <Header>
           <h3>Introducing</h3>
-          <h1>Introducing RAFT&apos;s Next-Gen Cards</h1>
-          <p>
-            Discover RAFT&apos;s latest innovation – our new cards. Elevate your
-            banking experience with cutting-edge features, security, and
-            unprecedented convenience.
-          </p>
+          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+          <MaskText phrases={desktopParagraphPhrase} tag="p" />
         </Header>
         <CardsContainer>
           <LeftImage
@@ -74,11 +77,11 @@ const IntroSection = () => {
         <Edges>
           {edges.map((edge, i) => (
             <Edge key={i}>
-              <Title>
+               <Title>
                 <Image src={edge.icon} alt="icon" />
-                {edge.point}
+                <MaskText phrases={new Array(edge.point)} tag="h3" />
               </Title>
-              <p>{edge.details}</p>
+              <MaskText phrases={new Array(edge.details)} tag="p" />
             </Edge>
           ))}
         </Edges>

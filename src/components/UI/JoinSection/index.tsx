@@ -20,6 +20,7 @@ import esther_howard from '../../../../public/images/esther_howard.png';
 import ic_arrow_left from '../../../../public/svgs/ic_arrow_left.svg';
 import ic_arrow_right from '../../../../public/svgs/ic_arrow_right.svg';
 import Image, { StaticImageData } from 'next/image';
+import { MaskText } from '@/components';
 
 type Props = {
   testimony: string;
@@ -75,20 +76,21 @@ const JoinSection = () => {
     ];
     setTestimonialsArr(newArr);
   };
+  const desktopHeaderPhrase = ['Join over 3 million', 'members'];
   return (
     <Wrapper>
       <Inner>
         <Header>
-          <h1>Join over 3 million members</h1>
+          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
         </Header>
         <TestimonialWrapper>
           {testimonialsArr.slice(0, 3).map((t, i) => (
             <Testimonial key={i}>
-              <Testimony> {t.testimony}</Testimony>
+              <Testimony>{t.testimony}</Testimony>
               <UserInfo>
                 <Name>
-                  <h3>{t.person}</h3>
-                  <p>Happy RAFT User</p>
+                  <MaskText phrases={new Array(t.person)} tag="h3" />
+                  <MaskText phrases={new Array('Happy RAFT User')} tag="p" />
                 </Name>
                 <Avatar>
                   <Image src={t.avatar} alt="user avatar" />

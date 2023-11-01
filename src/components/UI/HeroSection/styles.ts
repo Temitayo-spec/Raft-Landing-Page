@@ -41,6 +41,9 @@ export const HeroTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  padding-bottom: 2rem;
+  
   h1 {
     font-size: 6rem;
     font-weight: 400;
@@ -51,6 +54,6 @@ export const HeroTextContainer = styled.div`
     color: #bdbdbd;
     font-size: 1.5rem;
     font-weight: 400;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
   }
 `;

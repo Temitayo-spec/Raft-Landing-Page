@@ -47,7 +47,7 @@ const stats = [
     subtitle: 'users',
   },
   {
-    number: '5',
+    number: '5+',
     subtitle: 'user ratings',
   },
 ];

@@ -1,7 +1,7 @@
 'use client';
 import { Body, LineMask } from './styles';
 import { useInView, motion } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
   const animate = {
