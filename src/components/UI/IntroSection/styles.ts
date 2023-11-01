@@ -4,6 +4,10 @@ import { styled } from 'styled-components';
 
 export const Wrapper = styled.section`
   padding-top: 7.5rem;
+
+  @media (max-width: 768px) {
+    padding-top: 6rem;
+  }
 `;
 
 export const Inner = styled.div`
@@ -34,7 +38,6 @@ export const Header = styled.header`
   h1 {
     font-size: 4.75rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
   }
 
   p {
@@ -43,6 +46,28 @@ export const Header = styled.header`
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.75rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+`;
+
+export const HeaderMainText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
   }
 `;
 

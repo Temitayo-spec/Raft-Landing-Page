@@ -12,12 +12,14 @@ import {
   Wrapper,
   Inner,
   Header,
+  HeaderMainText,
   CardsContainer,
   LeftImage,
   MiddleImage,
   RightImage,
 } from './styles';
 import { MaskText } from '@/components';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 
 const edges = [
   {
@@ -48,13 +50,34 @@ const IntroSection = () => {
     'experience with cutting-edge features, security, and unprecedented',
     'convenience.',
   ];
+
+  // For mobile
+  const isMobile = useIsMobile();
+  const mobileHeaderPhrase = ["Introducing RAFT's", 'Next-Gen Cards'];
+   const mobileParagraphPhrase = [
+     " Discover RAFT's latest innovation – our new cards.",
+     ' Elevate your banking experience with cutting-edge',
+     'features, security, and unprecedented',
+     'convenience.',
+   ];
   return (
     <Wrapper>
       <Inner>
         <Header>
           <h3>Introducing</h3>
-          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
-          <MaskText phrases={desktopParagraphPhrase} tag="p" />
+          <HeaderMainText>
+            {isMobile ? (
+              <>
+                <MaskText phrases={mobileHeaderPhrase} tag="h1" />
+                <MaskText phrases={mobileParagraphPhrase} tag="p" />
+              </>
+            ) : (
+              <>
+                <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+                <MaskText phrases={desktopParagraphPhrase} tag="p" />
+              </>
+            )}
+          </HeaderMainText>
         </Header>
         <CardsContainer>
           <LeftImage
@@ -77,7 +100,7 @@ const IntroSection = () => {
         <Edges>
           {edges.map((edge, i) => (
             <Edge key={i}>
-               <Title>
+              <Title>
                 <Image src={edge.icon} alt="icon" />
                 <MaskText phrases={new Array(edge.point)} tag="h3" />
               </Title>
