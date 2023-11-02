@@ -43,7 +43,7 @@ export const Inner = styled.div`
 
   @media (max-width: 768px) {
     gap: 1rem;
-    height: 10rem;
+    height: auto;
     img {
       width: 6rem;
       height: 6rem;
