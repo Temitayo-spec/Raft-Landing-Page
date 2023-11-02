@@ -5,19 +5,14 @@ import ic_chevron_right from '../../../../public/svgs/ic_chevron_right.svg';
 import { GetStartedButton } from '@/components';
 import MaskText from '@/components/Common/MaskText';
 import { useIsMobile } from '../../../../libs/useIsMobile';
+import {
+  mobileParagraphPhrases,
+  mobilePhrases,
+  paragraphPhrases,
+  phrases,
+} from './constants';
 
 const HeroSection = () => {
-  const phrases = ['Building the future of', 'banking.'];
-  const paragraphPhrases = [
-    "Experience the future of banking with RAFT. We're here to",
-    'empower your financial journey.',
-  ];
-
-  const mobilePhrases = ['Building the future', 'of banking'];
-  const mobileParagraphPhrases = [
-    "Experience the future of banking with RAFT. We're",
-    'here to empower your financial journey.',
-  ];
   const isMobile = useIsMobile();
   return (
     <Wrapper>

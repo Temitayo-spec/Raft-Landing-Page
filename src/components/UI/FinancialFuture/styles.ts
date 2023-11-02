@@ -161,17 +161,17 @@ export const Stat = styled.div`
   }
 `;
 
-export const Number = styled.h1`
-  font-size: 5rem;
-  font-weight: 600;
-`;
+// export const Number = styled.h1`
+//   font-size: 5rem;
+//   font-weight: 600;
+// `;
 
-export const SubTitle = styled.p`
-  color: var(--link-color);
-  font-size: 1.125rem;
-  font-weight: 500;
-  text-transform: uppercase;
-`;
+// export const SubTitle = styled.p`
+//   color: var(--link-color);
+//   font-size: 1.125rem;
+//   font-weight: 500;
+//   text-transform: uppercase;
+// `;
 
 export const Banner = styled.div`
   height: 45rem;
