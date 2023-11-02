@@ -19,14 +19,14 @@ export const Inner = styled.main`
 `;
 
 export const FooterLogo = styled.div`
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
   @media (max-width: 768px) {
     width: 13.2rem;
     height: 5.6rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 `;
 
