@@ -40,6 +40,20 @@ export const Inner = styled.div`
       font-size: 25em;
     }
   }
+
+  @media (max-width: 768px) {
+    height: 6rem;
+    img {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    div {
+      div {
+        font-size: 6rem;
+      }
+    }
+  }
 `;
 
 export const SecondOverlay = styled.div`
