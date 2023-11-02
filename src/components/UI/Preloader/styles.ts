@@ -42,6 +42,7 @@ export const Inner = styled.div`
   }
 
   @media (max-width: 768px) {
+    gap: 1rem;
     height: 6rem;
     img {
       width: 6rem;
