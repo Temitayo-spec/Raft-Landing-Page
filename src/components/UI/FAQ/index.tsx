@@ -5,7 +5,6 @@ import {
   Accordion,
   AccordionItem,
   Answer,
-  HeaderText,
   Inner,
   Question,
   Wrapper,
@@ -13,6 +12,7 @@ import {
 import Image from 'next/image';
 import ic_chevron_down from '../../../../public/svgs/ic_chevron_down.svg';
 import { MaskText } from '@/components';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 
 type FAQItem = {
   question: string;
@@ -50,29 +50,35 @@ const FAQ = () => {
   };
 
   const desktopHeaderPhrase = ['Frequently asked', 'questions'];
-    const animate = {
-      initial: {
-        y: '100%',
-        opacity: 0,
-      },
-      open: (i: number) => ({
-        y: '0%',
-        opacity: 1,
-        transition: { duration: 1, delay: 0.1 * i, ease: [0.33, 1, 0.68, 1] },
-      }),
-    };
-    const accordionRef = useRef(null);
-    const isInView = useInView(accordionRef, {
-      once: true,
-      margin: '-10%',
-      amount: 0.4,
-    });
+  const mobileHeaderPhrase = ['Frequently', 'asked', 'questions'];
+  const animate = {
+    initial: {
+      y: '100%',
+      opacity: 0,
+    },
+    open: (i: number) => ({
+      y: '0%',
+      opacity: 1,
+      transition: { duration: 1, delay: 0.1 * i, ease: [0.33, 1, 0.68, 1] },
+    }),
+  };
+  const accordionRef = useRef(null);
+  const isInView = useInView(accordionRef, {
+    once: true,
+    margin: '-10%',
+    amount: 0.4,
+  });
+
+  const isMobile = useIsMobile();
 
   return (
     <Wrapper>
       <Inner>
-        <MaskText phrases={desktopHeaderPhrase} tag="h1" />
-
+        {isMobile ? (
+          <MaskText phrases={mobileHeaderPhrase} tag="h1" />
+        ) : (
+          <MaskText phrases={desktopHeaderPhrase} tag="h1" />
+        )}
         <Accordion ref={accordionRef}>
           {faqData.map((item, index) => (
             <AccordionItem

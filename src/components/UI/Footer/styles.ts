@@ -12,9 +12,23 @@ export const Inner = styled.main`
   display: flex;
   flex-direction: column;
   gap: 3.75rem;
+
+  @media (max-width: 768px) {
+    gap: 2.5rem;
+  }
 `;
 
-export const FooterLogo = styled.div``;
+export const FooterLogo = styled.div`
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 13.2rem;
+    height: 5.6rem;
+  }
+`;
 
 export const FooterMainContent = styled.div`
   display: flex;
@@ -28,6 +42,12 @@ export const FooterMiddle = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 3.5rem;
+  }
 `;
 
 export const QRContainer = styled.div`
@@ -51,6 +71,12 @@ export const TextCtn = styled.div`
     font-size: 1.25rem;
     font-weight: 400;
   }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const IconCtn = styled.div`
@@ -62,6 +88,11 @@ export const IconCtn = styled.div`
 export const FooterNavigation = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 3.75rem;
+  }
 `;
 
 export const GridColumn = styled.div`
@@ -71,6 +102,10 @@ export const GridColumn = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    min-width: auto;
+  }
 `;
 
 export const LinksContainer = styled.ul`
@@ -119,6 +154,19 @@ export const Translator = styled.div`
   align-items: center;
   gap: 1.12rem;
   cursor: pointer;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+
+    h3 {
+      font-size: 0.875rem;
+    }
+  }
 `;
 
 export const CopyRight = styled.div`
@@ -126,4 +174,9 @@ export const CopyRight = styled.div`
   font-weight: 400;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    gap: 0.25rem;
+  }
 `;

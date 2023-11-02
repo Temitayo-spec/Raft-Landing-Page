@@ -21,6 +21,7 @@ import ic_arrow_left from '../../../../public/svgs/ic_arrow_left.svg';
 import ic_arrow_right from '../../../../public/svgs/ic_arrow_right.svg';
 import Image, { StaticImageData } from 'next/image';
 import { MaskText } from '@/components';
+import { useIsMobile } from '../../../../libs/useIsMobile';
 
 type Props = {
   testimony: string;
@@ -77,6 +78,12 @@ const JoinSection = () => {
     setTestimonialsArr(newArr);
   };
   const desktopHeaderPhrase = ['Join over 3 million', 'members'];
+
+  const isMobile = useIsMobile();
+
+  const mappedTestimonials = isMobile
+    ? testimonialsArr.slice(0, 1)
+    : testimonialsArr.slice(0, 3);
   return (
     <Wrapper>
       <Inner>
@@ -84,7 +91,7 @@ const JoinSection = () => {
           <MaskText phrases={desktopHeaderPhrase} tag="h1" />
         </Header>
         <TestimonialWrapper>
-          {testimonialsArr.slice(0, 3).map((t, i) => (
+          {mappedTestimonials.map((t, i) => (
             <Testimonial key={i}>
               <Testimony>{t.testimony}</Testimony>
               <UserInfo>

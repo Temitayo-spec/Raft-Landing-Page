@@ -19,6 +19,12 @@ export const Inner = styled.div`
     font-size: 6rem;
     font-weight: 400;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3.75rem;
+    }
+  }
 `;
 
 export const HeaderText = styled.h1`
@@ -49,6 +55,12 @@ export const Question = styled(motion.div)`
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
 `;
 
 export const Answer = styled(motion.div)`
