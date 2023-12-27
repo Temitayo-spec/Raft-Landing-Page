@@ -34,23 +34,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-NSChE-Chatbot is a sophisticated chatbot designed to enhance the student experience by providing quick and accurate information related to their studies within the National Society of Chemical Engineers (NSChE). It utilizes state-of-the-art Natural Language Processing (NLP) techniques and various tools, including RAG, Langchain, ChromaDB, and a Large Language Model (LLM), to deliver effective interactions.
-
-## Features
-
-- **RAG (Retrieval-Augmented Generation):** NSChE-Chatbot leverages RAG to retrieve domain-specific information from its extensive corpus and generate detailed responses to user queries.
-
-- **Langchain:** The chatbot employs Langchain, a powerful language understanding framework, to interpret and process user inputs effectively.
-
-- **ChromaDB:** ChromaDB is integrated for efficient data retrieval and management, ensuring that the chatbot always has access to the most up-to-date information.
-
-- **Large Language Model (LLM):** NSChE-Chatbot utilizes a cutting-edge Large Language Model to provide natural and context-aware interactions with users.
-
-## Usage
-NSChE-Chatbot can assist students in various ways, including:
-
-- **Answering questions related to academic courses, assignments, and exams**
-- **Offering guidance on career opportunities in chemical engineering**
-- **Offering general information about the chemical engineering field**
-- **Feel free to ask the chatbot any questions related to your studies or the NSChE, and it will provide prompt and accurate responses.**
